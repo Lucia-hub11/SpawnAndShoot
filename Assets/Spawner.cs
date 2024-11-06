@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
             float z = Random.Range(-20f, 20f);
             Vector3 pos = new Vector3(x, y, z);
             Quaternion rot = Random.rotation;
-            float s = Random.Range(0.5f, 5f);
+            float s = Random.Range(0.5f, 4f);
             Vector3 size = new Vector3(s, s, s);
             SpawnOne(pos, rot, size);
         }
