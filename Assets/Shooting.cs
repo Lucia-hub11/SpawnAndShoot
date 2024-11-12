@@ -13,7 +13,13 @@ public class Shooting : MonoBehaviour
     {
         _rg = GetComponent<Rigidbody>();
         Applyspeed();
+        DestroyBullet();
     }
+    private void DestroyBullet()
+    {
+        Destroy(gameObject, 1);
+    }
+
     private void Applyspeed()
     {
         _rg.velocity = transform.forward * bulletspeed;
