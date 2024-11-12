@@ -6,10 +6,17 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public GameObject Prefab;
+    private Rigidbody _rg;
+    public float bulletspeed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rg = GetComponent<Rigidbody>();
+        Applyspeed();
+    }
+    private void Applyspeed()
+    {
+        _rg.velocity = transform.forward * bulletspeed;
     }
 
     // Update is called once per frame
