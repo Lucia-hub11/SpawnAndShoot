@@ -9,8 +9,9 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
     private float _maxHealth =100;
 
     public static Action OnDeath;
-
     private bool _dead;
+
+    public static Action<float> OnDamage;
     private void Start()
     {
         _currentHealth = _maxHealth;
@@ -19,6 +20,9 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
     {
         _currentHealth -= amount;
         Debug.Log("AUA" + _currentHealth);
+
+        OnDamage?.Invoke(_currentHealth / _maxHealth);
+
         if(_currentHealth <=0 && !_dead)
         {
             Die();
