@@ -8,7 +8,7 @@ public class DamageDealer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        var damageTakers =
+        ITakeDamage[] damageTakers =
             collision.collider.GetComponents<ITakeDamage>();
         if(damageTakers != null)
         {
