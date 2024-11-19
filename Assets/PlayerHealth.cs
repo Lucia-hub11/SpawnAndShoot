@@ -13,6 +13,6 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
     }
     public void TakeDamage(float amount)
     {
-        Debug.Log("AUA");
+        Debug.Log("AUA" + _currentHealth);
     }
 }
